@@ -1,6 +1,6 @@
-package com.reddit.sprintredditclone.model;
+package com.reddit.springredditclone.model;
 
-import com.reddit.sprintredditclone.exceptions.SpringRedditException;
+import com.reddit.springredditclone.exceptions.SpringRedditException;
 
 import java.util.Arrays;
 

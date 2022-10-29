@@ -1,6 +1,6 @@
-package com.reddit.sprintredditclone.repository;
+package com.reddit.springredditclone.repository;
 
-import com.reddit.sprintredditclone.model.Subreddit;
+import com.reddit.springredditclone.model.Subreddit;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
