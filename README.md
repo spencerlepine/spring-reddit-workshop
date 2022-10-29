@@ -1,21 +1,25 @@
 # Spring Boot Reddit Clone Backend [![CI/CD Pipeline](https://github.com/spencerlepine/spring-reddit-workshop/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/spencerlepine/spring-reddit-workshop/actions/workflows/build.yml)
 
-Reddit clone built using Spring Boot, Spring Security with JPA Authentication, Spring Data JPA with MySQL, Spring MVC. The frontend is built using Angular - You can find the frontend source code here - https://github.com/SaiUpadhyayula/angular-reddit-clone
+Reddit clone built using Spring Boot, Spring Security with JPA Authentication, Spring Data JPA with MySQL, Spring MVC. The frontend is built using Angular - You can find the frontend source code here - [https://github.com/spencerlepine/angular-reddit-workshop](https://github.com/spencerlepine/angular-reddit-workshop)
 
 ![](./youtube-video.png)
 
 ### Links
-Created template project on [https://start.spring.io/](https://start.spring.io/)
-
-Following the YouTube tutorial: [https://www.youtube.com/watch?v=DKlTBBuc32c](https://www.youtube.com/watch?v=DKlTBBuc32c)
-
-Example Repository: [https://github.com/SaiUpadhyayula/spring-reddit-clone](https://github.com/SaiUpadhyayula/spring-reddit-clone)
-
+- YouTube tutorial: [https://www.youtube.com/watch?v=DKlTBBuc32c](https://www.youtube.com/watch?v=DKlTBBuc32c)
+- Tutorial Repository Backend: [https://github.com/SaiUpadhyayula/spring-reddit-clone](https://github.com/SaiUpadhyayula/spring-reddit-clone)
+- Tutorial Repository Frontend: [https://github.com/SaiUpadhyayula/angular-reddit-clone](https://github.com/SaiUpadhyayula/angular-reddit-clone)
 
 ### Helpful Commands
+
+> Created template project on [https://start.spring.io/](https://start.spring.io/)
+
 ```sh
+# Install Dependencies
 $ mvn dependency:resolve
+# Test & Build
 $ mvn -B test
+
+# Set up IntelliJ IDEA and lombok
 # CTRL + SHIFT + A => "Plugins" => search lombok
 ```
 
@@ -39,4 +43,6 @@ mysql> UPDATE mysql.user set host = '%' where user='root';
 mysql> exit
 bash> exit
 $ docker restart reddit-mysql
+# now accessible on localhost my springboot application
+# or MySQL Workbench
 ```
