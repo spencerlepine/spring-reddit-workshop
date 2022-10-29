@@ -13,4 +13,6 @@ Example Repository: [https://github.com/SaiUpadhyayula/spring-reddit-clone](http
 ### Helpful Commands
 ```sh
 $ mvn dependency:resolve
+$ mvn -B test
+# CTRL + SHIFT + A => "Plugins" => search lombok
 ```
