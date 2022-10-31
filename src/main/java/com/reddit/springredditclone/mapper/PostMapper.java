@@ -1,6 +1,5 @@
 package com.reddit.springredditclone.mapper;
 
-import com.github.marlonlom.utilities.timeago.TimeAgo;
 import com.reddit.springredditclone.dto.PostRequest;
 import com.reddit.springredditclone.dto.PostResponse;
 import com.reddit.springredditclone.model.*;
@@ -48,7 +47,7 @@ public abstract class PostMapper {
     }
 
     String getDuration(Post post) {
-        return TimeAgo.using(post.getCreatedDate().toEpochMilli());
+        return post.getCreatedDate().toEpochMilli() + " seconds BROKEN";
     }
 
     boolean isPostUpVoted(Post post) {

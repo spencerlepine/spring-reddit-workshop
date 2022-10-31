@@ -22,14 +22,14 @@ public class Post {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     private Long postId;
-    @NotBlank(message = "Post Name cannot be empty of NULL")
+    @NotBlank(message = "Post Name cannot be empty or Null")
     private String postName;
     @Nullable
     private String url;
     @Nullable
     @Lob
     private String description;
-    private Integer voteCount;
+    private Integer voteCount = 0;
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "userId", referencedColumnName = "userId")
     private User user;

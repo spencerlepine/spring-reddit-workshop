@@ -39,10 +39,11 @@ public class PostService {
         postRepository.save(postMapper.map(postRequest, subreddit, authService.getCurrentUser()));
     }
 
+
     @Transactional(readOnly = true)
     public PostResponse getPost(Long id) {
         Post post = postRepository.findById(id)
-                .orElseThrow(() -> new PostNotFoundException(id.toString()));
+                .orElseThrow(() -> new PostNotFoundException("Unable to find post with id: " + id.toString()));
         return postMapper.mapToDto(post);
     }
 
