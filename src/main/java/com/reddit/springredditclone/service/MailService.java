@@ -28,6 +28,8 @@ class MailService {
             messageHelper.setSubject(notificationEmail.getSubject());
             messageHelper.setText(mailContentBuilder.build(notificationEmail.getBody()));
         };
+        log.info(notificationEmail.getBody());
+
         try {
             mailSender.send(messagePreparator);
             log.info("Activation email sent!!");
