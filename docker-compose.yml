@@ -1,0 +1,10 @@
+version: '2'
+services:
+  reddit-server:
+    container_name: reddit-server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: reddit-server:latest
+    ports:
+      - 8080:8080

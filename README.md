@@ -2,7 +2,7 @@
 
 Reddit clone built using Spring Boot, Spring Security with JPA Authentication, Spring Data JPA with MySQL, Spring MVC. The frontend is built using Angular - You can find the frontend source code here - [https://github.com/spencerlepine/angular-reddit-workshop](https://github.com/spencerlepine/angular-reddit-workshop)
 
-![](./youtube-video.png)
+![](.github/youtube-video.png)
 
 
 ### ⚙️ Local Development Setup
@@ -20,7 +20,7 @@ mvn spring-boot:run
 
 #### API Endpoint Examples w/ Postman
 
-Import the [postman_collection.json](./spring-reddit-clone.postman_collection.json) file into the [Postman](https://www.postman.com) workspace. 
+Import the [postman_collection.json](.github/spring-reddit-clone.postman_collection.json) file into the [Postman](https://www.postman.com) workspace. 
 
 ### 📜 Links
 - YouTube tutorial: [https://www.youtube.com/watch?v=DKlTBBuc32c](https://www.youtube.com/watch?v=DKlTBBuc32c)
