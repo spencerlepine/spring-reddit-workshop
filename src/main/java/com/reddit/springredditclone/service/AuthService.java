@@ -3,6 +3,7 @@ package com.reddit.springredditclone.service;
 import com.reddit.springredditclone.dto.AuthenticationResponse;
 import com.reddit.springredditclone.dto.LoginRequest;
 import com.reddit.springredditclone.exceptions.SpringRedditException;
+import com.reddit.springredditclone.exceptions.UsernameNotFoundException;
 import com.reddit.springredditclone.model.NotificationEmail;
 import com.reddit.springredditclone.model.User;
 import com.reddit.springredditclone.dto.RegisterRequest;
@@ -11,6 +12,7 @@ import com.reddit.springredditclone.repository.UserRepository;
 import com.reddit.springredditclone.repository.VerificationTokenRepository;
 import com.reddit.springredditclone.security.JwtProvider;
 import lombok.AllArgsConstructor;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -54,6 +56,14 @@ public class AuthService {
                 "http://localhost:8080/api/auth/accountVerification/" + token));
     }
 
+    @Transactional(readOnly = true)
+    public User getCurrentUser() {
+        Jwt principal = (Jwt) SecurityContextHolder.
+                getContext().getAuthentication().getPrincipal();
+        return userRepository.findByUsername(principal.getSubject())
+                .orElseThrow(() -> new UsernameNotFoundException("User name not found - " + principal.getSubject()));
+    }
+
     private String generateVerificationToken(User user) {
         String token = UUID.randomUUID().toString();
         VerificationToken verificationToken = new VerificationToken();
@@ -85,5 +95,10 @@ public class AuthService {
         SecurityContextHolder.getContext().setAuthentication(authenticate);
         String token = jwtProvider.generateToken(authenticate);
         return new AuthenticationResponse(token, loginRequest.getUsername());
+    }
+
+    public boolean isLoggedIn() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        return !(authentication instanceof AnonymousAuthenticationToken) && authentication.isAuthenticated();
     }
 }
