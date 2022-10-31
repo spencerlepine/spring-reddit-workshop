@@ -16,6 +16,8 @@ Reddit clone built using Spring Boot, Spring Security with JPA Authentication, S
 ```sh
 # Install Dependencies
 $ mvn dependency:resolve
+# mvn clean install 
+
 # Test & Build
 $ mvn -B test
 
