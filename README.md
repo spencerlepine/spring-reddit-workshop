@@ -7,7 +7,8 @@ Reddit clone built using Spring Boot, Spring Security with JPA Authentication, S
 
 ### ⚙️ Local Development Setup
 
-> _Prerequisites_: [JDK v11](https://www.oracle.com/java/technologies/downloads/)
+> _Prerequisites_: 
+>    - [JDK v11](https://www.oracle.com/java/technologies/downloads/), running [MySQL](https://hub.docker.com/_/mysql) database, and [Mailtrap](https://mailtrap.io) account
 
 ```shell
 git clone https://github.com/spencerlepine/spring-reddit-workshop
