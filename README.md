@@ -2,6 +2,8 @@
 
 Reddit clone built using Spring Boot, Spring Security with JPA Authentication, Spring Data JPA with MySQL, Spring MVC. The frontend is built using Angular - You can find the frontend source code here - [https://github.com/spencerlepine/angular-reddit-workshop](https://github.com/spencerlepine/angular-reddit-workshop)
 
+Left off at: [https://youtu.be/DKlTBBuc32c?t=2868](https://youtu.be/DKlTBBuc32c?t=2868)
+
 ![](./youtube-video.png)
 
 ### Links
