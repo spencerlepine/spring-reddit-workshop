@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "2bec2566-3d7e-4b91-82d1-d09755a75c91",
+		"name": "spring-reddit-clone",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"bob\",\n    \"email\":\"bob@gmail.com\",\n    \"password\":\"password5\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"bob\",\n    \"password\":\"password5\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE Subreddit",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiYm9iIiwiZXhwIjoxNjY3MjM3MTU5LCJpYXQiOjE2NjcyMzcwNjksInNjb3BlIjoiUk9MRV9VU0VSIn0.u5iIPzWU_-hVWL_be286hRBXu9qzXsSqxQ-hLMRzes5PxPh0DBIMgmmkR1I28VAvxB4YQ11-toNZU9ULhMTaSKIV610m72qb8ElVzIR6-hSGrDeTr-8uxP0GZwLDGabsYBs5_b8e9eTNH_dGKagZJ13YZl1VAGTTMooU9B6pzLAdQmA5zzJihn82ipIFkUrlToGYPtt-Zp82U3TLfiTLqJLFeSrxkhTKkxl3c1Dz_T46sd-nZep8j4RQQ2AwaZuoLuAMmmrTMTewM6tiAmYQmiQl-nEFfgw_H54Z4vQXi5R3mJHcHqd8tTf6XEzyFGulFEr5k_pfe-HYpAddJRIaRw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Best Subreddit 5\",\n    \"description\":\"This is the best subreddit ever\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/subreddit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"subreddit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET All Subreddits",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiYm9iIiwiZXhwIjoxNjY3MjQxMTA0LCJpYXQiOjE2NjcyNDEwMTQsInNjb3BlIjoiUk9MRV9VU0VSIn0.pw-HM-e55R07dR6eFnOEgIvLAdbrRliFE7wpHa3krYh3B1n9GKDl4Zc2xb7yL90Q7VJi1uOZ8628eZlXxTZ9L-3Y_AMW1Tb5NPbpvB_nH4NwDl_SBpikNy4gDNqJTUPFjwVezumeOiY1xWgtK3Ej65lc4h837kMt6x-lTYsu8LtVyOviD37Stfgxl3ePziRMb6jiAlafTLIDyuiIOIhedW2XJUEPV_m9M5uTXB23BsNrMBdx8GG5G0Tj12QD9-VfCPWakNPSPQFldp5g5VOiQ2nTmUr5jriL44C-CjOnL1mMYPjCeZGFaZts0kG26ApZMNSlloNWyQ6VyhvUhis7sg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/subreddit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"subreddit"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
