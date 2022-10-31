@@ -1,5 +1,6 @@
 package com.reddit.springredditclone.service;
 
+import com.reddit.springredditclone.dto.LoginRequest;
 import com.reddit.springredditclone.exceptions.SpringRedditException;
 import com.reddit.springredditclone.model.NotificationEmail;
 import com.reddit.springredditclone.model.User;
@@ -8,6 +9,8 @@ import com.reddit.springredditclone.model.VerificationToken;
 import com.reddit.springredditclone.repository.UserRepository;
 import com.reddit.springredditclone.repository.VerificationTokenRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,6 +28,7 @@ public class AuthService {
     private final UserRepository userRepository;
     private final VerificationTokenRepository verificationTokenRepository;
     private final MailService mailService;
+    private final AuthenticationManager authenticationManager;
 
     @Transactional
     public void signup(RegisterRequest registerRequest) {
@@ -66,5 +70,9 @@ public class AuthService {
         User user = userRepository.findByUsername(username).orElseThrow(() -> new SpringRedditException("User not found with name: " + username));
         user.setEnabled(true);
         userRepository.save(user);
+    }
+
+    public void login(LoginRequest loginRequest) {
+        authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
     }
 }
