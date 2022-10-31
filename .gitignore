@@ -7,8 +7,7 @@ target/
 # KEYS
 application.properties
 app.key
-jwt.private.key
-springblog.jks
+springreddit.jks
 
 ### STS ###
 .apt_generated
