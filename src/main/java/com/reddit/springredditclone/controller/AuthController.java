@@ -1,7 +1,7 @@
 package com.reddit.springredditclone.controller;
 
 import com.reddit.springredditclone.dto.LoginRequest;
-import com.reddit.springredditclone.dto.LoginRequest;
+import com.reddit.springredditclone.dto.AuthenticationResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,7 +29,7 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public void login(@RequestBody LoginRequest loginRequest) {
-        authService.login(loginRequest);
+    public AuthenticationResponse login(@RequestBody LoginRequest loginRequest) {
+        return authService.login(loginRequest);
     }
 }

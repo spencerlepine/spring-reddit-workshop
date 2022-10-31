@@ -4,8 +4,9 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-# TEMPORARY
+# KEYS
 application.properties
+app.key
 
 ### STS ###
 .apt_generated
